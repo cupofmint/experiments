@@ -13710,11 +13710,11 @@
 
     SceneBasic.prototype.initColors = function() {
       this.colors = [];
-      this.colors.push('rgba(230, 50, 90, 0.4)');
+      this.colors.push('rgba(220, 80, 110, 0.4)');
       this.colors.push('rgba(75, 200, 230, 0.4)');
-      this.colors.push('rgba(139, 4, 232, 0.4)');
-      this.colors.push('rgba(21, 194, 39, 0.4)');
-      return this.colors.push('rgba(199, 132, 0, 0.4)');
+      this.colors.push('rgba(145, 95, 180, 0.4)');
+      this.colors.push('rgba(80, 190, 90, 0.4)');
+      return this.colors.push('rgba(190, 155, 80, 0.4)');
     };
 
     return SceneBasic;
@@ -14034,7 +14034,7 @@
       for (_j = 0, _len = _ref1.length; _j < _len; _j++) {
         boid = _ref1[_j];
         a = frame[i];
-        boid.acc.addSelf(boid.arrive(new Vec3D(a.x * this.scale + hw + this.offsetX - 10, a.y * this.scale + hh + this.offsetY, 0)).scaleSelf(0.3));
+        boid.acc.addSelf(boid.arrive(new Vec3D(a.x * this.scale + hw + this.offsetX - 10, a.y * this.scale + hh + this.offsetY, 0)).scaleSelf(0.4));
         boid.acc.addSelf(boid.wander().scaleSelf(0.1));
         boid.update();
         boid.bounce();

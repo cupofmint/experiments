@@ -45,7 +45,7 @@ a:hover {
 }
 
 #info div {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 #info div:last-child {
@@ -55,7 +55,7 @@ a:hover {
 #info h3 {
 	color:#777;
 	margin:0px auto;
-	font-size: 14px; 
+	font-size: 13px; 
 }
 
 #loader {

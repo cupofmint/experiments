@@ -71,7 +71,7 @@ class SceneIntro extends AbstractScene
 		i = 0
 		for boid in @boids
 			a = frame[i]
-			boid.acc.addSelf(boid.arrive(new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)).scaleSelf(0.3))
+			boid.acc.addSelf(boid.arrive(new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)).scaleSelf(0.4))
 			boid.acc.addSelf(boid.wander().scaleSelf(0.1))
 			# boid.acc.addSelf(boid.separate(@boids))
 			# boid.acc.addSelf(boid.cohesion(@boids).scaleSelf(0.01))

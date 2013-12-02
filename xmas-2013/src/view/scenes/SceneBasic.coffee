@@ -56,8 +56,8 @@ class SceneBasic extends AbstractScene
 
 	initColors: ->
 		@colors = []
-		@colors.push('rgba(230, 50, 90, 0.4)')
+		@colors.push('rgba(220, 80, 110, 0.4)')
 		@colors.push('rgba(75, 200, 230, 0.4)')
-		@colors.push('rgba(139, 4, 232, 0.4)')
-		@colors.push('rgba(21, 194, 39, 0.4)')
-		@colors.push('rgba(199, 132, 0, 0.4)')
+		@colors.push('rgba(145, 95, 180, 0.4)')
+		@colors.push('rgba(80, 190, 90, 0.4)')
+		@colors.push('rgba(190, 155, 80, 0.4)')
