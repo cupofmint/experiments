@@ -20,7 +20,7 @@ class AbstractScene
 	start: ->
 		if (!@audio.sourceNode) then return
 		@audio.sourceNode.playbackRate.value = 1
-		@scenes[@current].speed = 18.62
+		@speed = 18.62
 
 
 	update: ->

@@ -15,7 +15,7 @@ class SceneIntro extends AbstractScene
 	constructor: (@ctx, @index) ->
 		super
 
-		@scale = 1.5
+		@scale = 1
 		@offsetY = -50 * @scale
 		@color = 'rgba(75, 200, 230, 0.4)'
 
@@ -37,15 +37,15 @@ class SceneIntro extends AbstractScene
 			return
 
 		if (frame < 2)
-			@scale = 1.5
+			@scale = 1
 			@offsetY = -50 * @scale
 		else
-			@scale = 2
+			@scale = 1
 			# @offsetY = @frames[@currentFrame][0].y * -scale - hh
 			@offsetY = 0
 			@color = 'rgba(240, 110, 170, 0.4)'
 
-		if (frame != @currentFrame) then @initBoids(frame)
+		# if (frame != @currentFrame) then @initBoids(frame)
 		@currentFrame = frame
 
 
@@ -55,6 +55,7 @@ class SceneIntro extends AbstractScene
 
 
 		# @ctx.fillStyle = '#49c9e3'
+		@ctx.strokeStyle = '#cccccc'
 		@ctx.fillStyle = '#cccccc'
 		@ctx.beginPath()
 
@@ -67,32 +68,33 @@ class SceneIntro extends AbstractScene
 		# @ctx.stroke()
 		@ctx.closePath()
 
-
 		i = 0
 		for boid in @boids
 			a = frame[i]
-			boid.acc.addSelf(boid.arrive(new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)).scaleSelf(0.4))
-			boid.acc.addSelf(boid.wander().scaleSelf(0.1))
+			# boid.acc.addSelf(boid.arrive(new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)).scaleSelf(0.2))
+			boid.acc.addSelf(boid.arrive(new Vec3D(boid.pos.x, @ctx.height, 0)).scaleSelf(0.2))
+			boid.acc.addSelf(boid.wander().scaleSelf(0.2))
 			# boid.acc.addSelf(boid.separate(@boids))
 			# boid.acc.addSelf(boid.cohesion(@boids).scaleSelf(0.01))
 			boid.update()
 			boid.bounce()
 			i++
 
-		# for boid in @boids
-			# boid.draw()
+		for boid in @boids
+			boid.draw()
 
-
-		@ctx.strokeStyle = '#49c9e3'
+		###
+		@ctx.strokeStyle = @color
 		@ctx.fillStyle = @color
 		@ctx.beginPath()
 
 		for b in @boids
 			@ctx.lineTo(b.pos.x, b.pos.y)
 
-		@ctx.fill()
-		# @ctx.stroke()
+		# @ctx.fill()
+		@ctx.stroke()
 		@ctx.closePath()
+		###
 
 
 
@@ -112,9 +114,12 @@ class SceneIntro extends AbstractScene
 		frame = @frames[frameNum]
 		for i in [0...frame.length]
 			a = frame[i]
-			pos = new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)
-			color = '#fff'
+			# pos = new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)
+			pos = new Vec3D(random(@ctx.width * .1, @ctx.width * .9), random(-50, 0), 0)
+			# color = 'rgba(20, 20, 20, 0)'
+			color = '#ccc'
 			b = new Boid(@ctx, pos, color)
-			b.radius = 1
-			b.maxSpeed = random(1, 3)
+			b.radius = random(1, 2)
+			b.maxSpeed = random(0.2, 1)
+			# b.stroke = true
 			@boids.push(b)	

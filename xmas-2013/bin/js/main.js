@@ -5124,20 +5124,20 @@
           x: -38,
           y: -188
         }, {
-          x: -31,
-          y: -170
+          x: -32,
+          y: -178
         }, {
-          x: -35,
-          y: -169
+          x: -39,
+          y: -184
         }, {
           x: -30,
           y: -181
         }, {
-          x: -25,
-          y: -168
+          x: -24,
+          y: -174
         }, {
-          x: -26,
-          y: -165
+          x: -28,
+          y: -176
         }, {
           x: -23,
           y: -171
@@ -5499,8 +5499,8 @@
           x: -46,
           y: -174
         }, {
-          x: -33,
-          y: -173
+          x: -36,
+          y: -174
         }, {
           x: -44,
           y: -185
@@ -5565,29 +5565,29 @@
           x: -34,
           y: -191
         }, {
-          x: -23,
-          y: -184
+          x: -24,
+          y: -182
         }, {
           x: -18,
-          y: -190
+          y: -177
         }, {
-          x: -14,
-          y: -175
+          x: -12,
+          y: -170
         }, {
-          x: -21,
-          y: -171
+          x: -23,
+          y: -172
         }, {
-          x: -24,
-          y: -176
+          x: -26,
+          y: -172
         }, {
           x: -32,
-          y: -187
+          y: -172
         }, {
           x: -37,
           y: -175
         }, {
-          x: -49,
-          y: -172
+          x: -47,
+          y: -170
         }, {
           x: -67,
           y: -183
@@ -6012,8 +6012,8 @@
           x: -1,
           y: -171
         }, {
-          x: -18,
-          y: -173
+          x: -30,
+          y: -172
         }, {
           x: -24,
           y: -176
@@ -6024,8 +6024,8 @@
           x: -47,
           y: -170
         }, {
-          x: -57,
-          y: -165
+          x: -50,
+          y: -161
         }, {
           x: -69,
           y: -174
@@ -6366,8 +6366,8 @@
           x: -38,
           y: -148
         }, {
-          x: -48,
-          y: -155
+          x: -46,
+          y: -158
         }, {
           x: -50,
           y: -161
@@ -6375,8 +6375,8 @@
           x: -43,
           y: -173
         }, {
-          x: -18,
-          y: -175
+          x: -21,
+          y: -174
         }, {
           x: -24,
           y: -186
@@ -6447,8 +6447,8 @@
           x: -3,
           y: -184
         }, {
-          x: 5,
-          y: -176
+          x: 6,
+          y: -172
         }, {
           x: -18,
           y: -173
@@ -6459,8 +6459,8 @@
           x: -32,
           y: -176
         }, {
-          x: -47,
-          y: -170
+          x: -46,
+          y: -166
         }, {
           x: -51,
           y: -162
@@ -6807,14 +6807,14 @@
           x: -48,
           y: -154
         }, {
-          x: -53,
-          y: -164
+          x: -57,
+          y: -166
         }, {
           x: -43,
           y: -173
         }, {
-          x: -26,
-          y: -175
+          x: -23,
+          y: -174
         }, {
           x: -32,
           y: -190
@@ -6900,8 +6900,8 @@
           x: -47,
           y: -170
         }, {
-          x: -57,
-          y: -165
+          x: -52,
+          y: -162
         }, {
           x: -69,
           y: -174
@@ -7317,23 +7317,23 @@
           x: -34,
           y: -191
         }, {
-          x: -23,
-          y: -184
+          x: -24,
+          y: -183
         }, {
           x: -18,
-          y: -190
+          y: -178
         }, {
-          x: -14,
-          y: -175
-        }, {
-          x: -21,
-          y: -171
+          x: -13,
+          y: -170
         }, {
           x: -24,
-          y: -176
+          y: -170
         }, {
-          x: -32,
-          y: -187
+          x: -24,
+          y: -172
+        }, {
+          x: -31,
+          y: -172
         }, {
           x: -37,
           y: -175
@@ -7752,23 +7752,23 @@
           x: -38,
           y: -188
         }, {
-          x: -31,
-          y: -170
+          x: -29,
+          y: -179
         }, {
-          x: -35,
-          y: -169
+          x: -32,
+          y: -175
         }, {
           x: -30,
           y: -181
         }, {
           x: -25,
-          y: -168
+          y: -176
         }, {
-          x: -26,
-          y: -165
+          x: -28,
+          y: -176
         }, {
-          x: -23,
-          y: -171
+          x: -25,
+          y: -175
         }, {
           x: -25,
           y: -178
@@ -13609,7 +13609,7 @@
         return;
       }
       this.audio.sourceNode.playbackRate.value = 1;
-      return this.scenes[this.current].speed = 18.62;
+      return this.speed = 18.62;
     };
 
     AbstractScene.prototype.update = function() {
@@ -13973,7 +13973,7 @@
       this.ctx = ctx;
       this.index = index;
       SceneIntro.__super__.constructor.apply(this, arguments);
-      this.scale = 1.5;
+      this.scale = 1;
       this.offsetY = -50 * this.scale;
       this.color = 'rgba(75, 200, 230, 0.4)';
       this.initBoids();
@@ -14003,23 +14003,21 @@
         return;
       }
       if (frame < 2) {
-        this.scale = 1.5;
+        this.scale = 1;
         this.offsetY = -50 * this.scale;
       } else {
-        this.scale = 2;
+        this.scale = 1;
         this.offsetY = 0;
         this.color = 'rgba(240, 110, 170, 0.4)';
-      }
-      if (frame !== this.currentFrame) {
-        this.initBoids(frame);
       }
       return this.currentFrame = frame;
     };
 
     SceneIntro.prototype.draw = function() {
-      var a, b, boid, frame, hh, hw, i, _i, _j, _k, _len, _len1, _ref, _ref1, _ref2;
+      var a, boid, frame, hh, hw, i, _i, _j, _k, _len, _len1, _ref, _ref1, _ref2, _results;
       hw = this.ctx.width * .5;
       hh = this.ctx.height * .5;
+      this.ctx.strokeStyle = '#cccccc';
       this.ctx.fillStyle = '#cccccc';
       this.ctx.beginPath();
       frame = this.frames[this.currentFrame];
@@ -14034,22 +14032,32 @@
       for (_j = 0, _len = _ref1.length; _j < _len; _j++) {
         boid = _ref1[_j];
         a = frame[i];
-        boid.acc.addSelf(boid.arrive(new Vec3D(a.x * this.scale + hw + this.offsetX - 10, a.y * this.scale + hh + this.offsetY, 0)).scaleSelf(0.4));
-        boid.acc.addSelf(boid.wander().scaleSelf(0.1));
+        boid.acc.addSelf(boid.arrive(new Vec3D(boid.pos.x, this.ctx.height, 0)).scaleSelf(0.2));
+        boid.acc.addSelf(boid.wander().scaleSelf(0.2));
         boid.update();
         boid.bounce();
         i++;
       }
-      this.ctx.strokeStyle = '#49c9e3';
-      this.ctx.fillStyle = this.color;
-      this.ctx.beginPath();
       _ref2 = this.boids;
+      _results = [];
       for (_k = 0, _len1 = _ref2.length; _k < _len1; _k++) {
-        b = _ref2[_k];
-        this.ctx.lineTo(b.pos.x, b.pos.y);
+        boid = _ref2[_k];
+        _results.push(boid.draw());
       }
-      this.ctx.fill();
-      return this.ctx.closePath();
+      return _results;
+      /*
+      		@ctx.strokeStyle = @color
+      		@ctx.fillStyle = @color
+      		@ctx.beginPath()
+      
+      		for b in @boids
+      			@ctx.lineTo(b.pos.x, b.pos.y)
+      
+      		# @ctx.fill()
+      		@ctx.stroke()
+      		@ctx.closePath()
+      */
+
     };
 
     SceneIntro.prototype.initReindeer = function() {
@@ -15532,11 +15540,11 @@
       _results = [];
       for (i = _i = 0, _ref = frame.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         a = frame[i];
-        pos = new Vec3D(a.x * this.scale + hw + this.offsetX - 10, a.y * this.scale + hh + this.offsetY, 0);
-        color = '#fff';
+        pos = new Vec3D(random(this.ctx.width * .1, this.ctx.width * .9), random(-50, 0), 0);
+        color = '#ccc';
         b = new Boid(this.ctx, pos, color);
-        b.radius = 1;
-        b.maxSpeed = random(1, 3);
+        b.radius = random(1, 2);
+        b.maxSpeed = random(0.2, 1);
         _results.push(this.boids.push(b));
       }
       return _results;

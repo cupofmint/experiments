@@ -45,11 +45,13 @@ class SceneBasic extends AbstractScene
 
 		if (@count == 1) then return
 		
+		# @ctx.strokeStyle = @color
 		@ctx.fillStyle = @color
 		@ctx.beginPath()
 		for a in @reindeer.anchors
 			@ctx.lineTo(a.pos.x + hw - 10, a.pos.y + hh)
 		@ctx.fill()
+		# @ctx.stroke()
 		@ctx.closePath()
 		
 
