@@ -7,6 +7,7 @@ class Scenes
 	current					: null
 
 	playingIntro			: null
+	playingOutro			: null
 	auto 					: null
 	lastChange 				: 0
 
@@ -29,9 +30,16 @@ class Scenes
 		if (!@auto) then return
 		
 		dt = Date.now() - @audio.startedAt
+
+		# music is over
+		if (dt > 222000 && !@playingOutro)
+			@showOutro()
+			return
+
 		if ((dt - @lastChange) * @audio.sourceNode.playbackRate.value > 4320)
 			@lastChange = dt
 			@next()
+			@scenes[@current].update()
 
 
 	draw: ->
@@ -61,6 +69,11 @@ class Scenes
 		@playingIntro = false
 		@scenes.shift()
 		@goto(0)
+
+
+	showOutro: ->
+		@playingOutro = true
+		app.view.ui.showOutro()
 
 
 	initScenes: ->

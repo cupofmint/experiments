@@ -8,8 +8,8 @@ class AppUI
 	info 					: null
 	more 					: null
 	infoOpen 				: false
-
 	loader 					: null
+	outro 					: null
 
 	drawAnchors				: true
 	drawLines				: true
@@ -25,13 +25,13 @@ class AppUI
 		@drawSpeed = 186
 		@playbackRate = 1.0
 
-		@initLodaer()
+		@initLoader()
 		@initInfo()
 		# @initStats()
 		# @initGUI()
 
 
-	initLodaer: ->
+	initLoader: ->
 		@loader = document.getElementById('loader')
 
 
@@ -71,6 +71,11 @@ class AppUI
 		f2.open()
 		f2.add(@, 'mute').onChange(-> that.onMuteChange()).listen()
 		f2.add(@, 'playbackRate', 0.0, 1.0, 0.1).onChange(-> that.onPlaybackRateChange())
+
+
+	showOutro: ->
+		@outro = document.getElementById('outro')
+		@outro.style.display = 'block'
 
 
 	onMuteChange: ->
