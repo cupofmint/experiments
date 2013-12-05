@@ -77,19 +77,6 @@ class SceneRopeBall extends AbstractScene
 
 
 
-	initReindeer: ->
-		super
-
-		###
-		for i in [0...@reindeer.anchors.length]
-			a = @reindeer.anchors[i]
-			# num = floor(random(@reindeer.anchors.length))
-			# a.other = @reindeer.anchors[num]
-			a.other = @reindeer.anchors[i + 15]
-			a.color = 'rgb(' + floor(random(160, 220)) + ', ' + floor(random(120, 140)) + ', 0)'
-		###
-
-
 	initBoids: ->
 		hw = @ctx.width * .5
 		hh = @ctx.height * .5

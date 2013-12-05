@@ -17,17 +17,10 @@ class SceneCircles extends AbstractScene
 
 		@ctx.globalCompositeOperation = 'source-over'
 
-		# background
-		@ctx.beginPath()
-		@ctx.fillStyle = '#1A1A1A'
-		# @ctx.fillStyle = '#1E5478'
-		# @ctx.fillRect(0, 0, @ctx.width, @ctx.height)
-		@ctx.closePath()
-
 		# circles
 		if (app.view.ui.drawAnchors)
 			@ctx.lineCap = 'butt'
-			@ctx.strokeStyle = '#E6335A'
+			# @ctx.strokeStyle = '#E6335A'
 			@ctx.fillStyle = '#E6335A'
 			@ctx.beginPath()
 			for a in @reindeer.anchors
@@ -52,19 +45,6 @@ class SceneCircles extends AbstractScene
 		lineWidth = 0
 		delay = random(0.8)
 		# delay = (a.index + 1) * 0.1
-		# else
-			# radius = 0
-			# lineWidth = 5
-			# delay = 0
-		###
-		r = random(5)
-		if (r > 4) then delay = 0.16
-		else if (r > 3) then delay = 0.32
-		else if (r > 2) then delay = 0.48
-		else if (r > 1) then delay = 0.56
-		else delay = 0
-		###
 
 		TweenMax.to(a, 0.6, { radius:radius, lineWidth:lineWidth, delay:delay, ease:Quart.easeOut })
 		TweenMax.to(a, 0.6, { radius2:radius2, delay:delay, ease:Quart.easeInOut, onCompleteParams:[a], onComplete:@tweenCircle })
-		# TweenMax.to(a, 3, { radius:radius, lineWidth:0, delay:delay, ease:Quart.easeInOut, yoyo:true, repeat:-1 })

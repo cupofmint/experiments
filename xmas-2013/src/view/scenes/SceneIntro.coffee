@@ -46,9 +46,6 @@ class SceneIntro extends AbstractScene
 		hw = @ctx.width * .5
 		hh = @ctx.height * .5
 
-
-		# @ctx.fillStyle = '#49c9e3'
-		@ctx.strokeStyle = '#cccccc'
 		@ctx.fillStyle = '#cccccc'
 		@ctx.beginPath()
 
@@ -58,17 +55,13 @@ class SceneIntro extends AbstractScene
 			@ctx.lineTo(a.x * @scale + hw + @offsetX, a.y * @scale + hh + @offsetY)
 
 		@ctx.fill()
-		# @ctx.stroke()
 		@ctx.closePath()
 
 		i = 0
 		for boid in @boids
 			a = frame[i]
-			# boid.acc.addSelf(boid.arrive(new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)).scaleSelf(0.2))
 			boid.acc.addSelf(boid.arrive(new Vec3D(boid.pos.x, @ctx.height, 0)).scaleSelf(0.2))
 			boid.acc.addSelf(boid.wander().scaleSelf(0.2))
-			# boid.acc.addSelf(boid.separate(@boids))
-			# boid.acc.addSelf(boid.cohesion(@boids).scaleSelf(0.01))
 			boid.update()
 			boid.bounce()
 			i++
@@ -111,7 +104,6 @@ class SceneIntro extends AbstractScene
 			a = frame[i]
 			# pos = new Vec3D(a.x * @scale + hw + @offsetX - 10, a.y * @scale + hh + @offsetY, 0)
 			pos = new Vec3D(random(@ctx.width * .1, @ctx.width * .9), random(-50, 0), 0)
-			# color = 'rgba(20, 20, 20, 0)'
 			color = '#ccc'
 			b = new Boid(@ctx, pos, color)
 			b.radius = random(1, 2)

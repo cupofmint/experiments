@@ -36,18 +36,6 @@ class SceneChewbacca extends AbstractScene
 		length = @reindeer.anchors.length
 		for i in [0...length]
 			a = @reindeer.anchors[i]
-			
-			###
-			if (i > 0) then p = @reindeer.anchors[i - 1].positions[0]
-			else p = a.positions[0]
-			if (i < length - 1) then n = @reindeer.anchors[i + 1].positions[0]
-			else n = a.positions[0]
-
-			dx = p.x - n.x
-			dy = p.y - n.y
-			# dd = Math.sqrt(dx * dx + dy * dy)
-			a.angle = Math.atan2(dy, dx) + HALF_PI
-			###
 
 			a.color = 'rgb(20, ' + floor(random(50, 255)) + ', ' + floor(random(10, 50)) + ')'
 			# a.color = 'rgb(' + floor(random(150, 255)) + ', ' + floor(random(150, 255)) + ', 25)'

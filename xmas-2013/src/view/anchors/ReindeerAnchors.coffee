@@ -101,6 +101,7 @@ class ReindeerAnchors
 			if (i <= 41) then a.left = true
 			else if (i >= 75 && i <= 111) then a.right = true
 
+			###
 			if (i <= 5) then a.leftFoot = true
 			else if (i <= 14) then a.leftLegLeft = true
 			else if (i <= 17) then a.leftHip = true
@@ -119,6 +120,7 @@ class ReindeerAnchors
 			else if (i <= 127) then a.rightLegLeft = true
 			else if (i <= 138) then a.leftLegRight = true
 			else a.leftFoot = true
+			###
 
 
 			# a.lineWidth = Math.floor(random(1, 18))
